@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator - Wedding Table Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="wedding-title">QR Code Generator</h1>
+        <p class="wedding-subtitle">Generate a QR code for your wedding table assignment system</p>
+        <div class="heart-decoration">💕</div>
+      </div>
+
+      <div class="qr-generator">
+        <div class="form-group">
+          <label for="websiteUrl">Website URL</label>
+          <input
+            type="url"
+            id="websiteUrl"
+            placeholder="https://yourwebsite.com/index.html"
+            value=""
+          />
+          <small class="form-help"
+            >Enter the full URL where you'll host the table assignment system</small
+          >
+        </div>
+
+        <button onclick="generateQR()" class="submit-btn">Generate QR Code</button>
+
+        <div id="qrResult" class="qr-result" style="display: none">
+          <h3>Your QR Code:</h3>
+          <div id="qrcode"></div>
+          <p class="qr-instructions">
+            <strong>Instructions:</strong><br />
+            1. Right-click the QR code and save the image<br />
+            2. Print it on a nice card or poster<br />
+            3. Place it at the entrance of your wedding venue<br />
+            4. Guests can scan it with their phone cameras to find their tables!
+          </p>
+          <button onclick="downloadQR()" class="back-btn">Download QR Code</button>
+        </div>
+      </div>
+
+      <div class="setup-instructions">
+        <h3>Setup Instructions:</h3>
+        <ol>
+          <li>
+            <strong>Edit Guest List:</strong> Open <code>guests.js</code> and replace the example
+            data with your actual guest list
+          </li>
+          <li>
+            <strong>Host the Website:</strong> Upload all files to a web hosting service (GitHub
+            Pages, Netlify, Vercel, etc.)
+          </li>
+          <li>
+            <strong>Generate QR Code:</strong> Enter your website URL above and generate the QR code
+          </li>
+          <li>
+            <strong>Print & Display:</strong> Print the QR code and place it at your venue entrance
+          </li>
+        </ol>
+      </div>
+
+      <div class="footer">
+        <p>Perfect for a modern wedding celebration! 🎉</p>
+      </div>
+    </div>
+
+    <script>
+      // Set default URL if running locally
+      document.addEventListener('DOMContentLoaded', function () {
+        const urlInput = document.getElementById('websiteUrl')
+        if (window.location.protocol === 'file:') {
+          urlInput.value = window.location.href.replace('generate-qr.html', 'index.html')
+        }
+      })
+
+      let qrCanvas = null
+
+      function generateQR() {
+        const url = document.getElementById('websiteUrl').value
+        if (!url) {
+          alert('Please enter a website URL')
+          return
+        }
+
+        const qrContainer = document.getElementById('qrcode')
+        qrContainer.innerHTML = ''
+
+        QRCode.toCanvas(
+          url,
+          {
+            width: 300,
+            margin: 2,
+            color: {
+              dark: '#8b4b8c',
+              light: '#ffffff'
+            }
+          },
+          function (error, canvas) {
+            if (error) {
+              console.error(error)
+              alert('Error generating QR code')
+              return
+            }
+
+            qrCanvas = canvas
+            qrContainer.appendChild(canvas)
+            document.getElementById('qrResult').style.display = 'block'
+          }
+        )
+      }
+
+      function downloadQR() {
+        if (!qrCanvas) {
+          alert('Please generate a QR code first')
+          return
+        }
+
+        const link = document.createElement('a')
+        link.download = 'wedding-table-qr-code.png'
+        link.href = qrCanvas.toDataURL()
+        link.click()
+      }
+    </script>
+
+    <style>
+      .qr-generator {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 40px;
+      }
+
+      .qr-result {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+      }
+
+      .qr-result h3 {
+        margin-bottom: 20px;
+        color: #8b4b8c;
+      }
+
+      .qr-result canvas {
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .qr-instructions {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        text-align: left;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .setup-instructions {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .setup-instructions h3 {
+        color: #8b4b8c;
+        margin-bottom: 20px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.8rem;
+      }
+
+      .setup-instructions ol {
+        text-align: left;
+        line-height: 1.8;
+      }
+
+      .setup-instructions li {
+        margin-bottom: 10px;
+      }
+
+      .setup-instructions code {
+        background: #f1f3f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Courier New', monospace;
+        font-size: 0.9em;
+      }
+    </style>
+  </body>
+</html>

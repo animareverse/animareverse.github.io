@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Table Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="wedding-title">Welcome!</h1>
+        <div class="heart-decoration">💕</div>
+      </div>
+
+      <div class="table-assignment">
+        <div class="guest-info">
+          <h2 id="guestName" class="guest-name"></h2>
+          <p class="welcome-message">We're so happy you're here to celebrate with us!</p>
+        </div>
+
+        <div class="table-info">
+          <div class="table-card">
+            <h3>Your table is:</h3>
+            <div id="tableName" class="table-name"></div>
+            <div class="table-icon">🍽️</div>
+          </div>
+        </div>
+
+        <div class="directions">
+          <p>Please head to your assigned table and enjoy the celebration!</p>
+        </div>
+
+        <div class="actions">
+          <button onclick="window.location.href='index.html'" class="back-btn">
+            Search Another Guest
+          </button>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Thank you for being part of our special day! 💒</p>
+      </div>
+    </div>
+
+    <script src="table-display.js"></script>
+  </body>
+</html>
