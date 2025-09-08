@@ -1,4 +1,4 @@
-# Wedding Table Assignment System 💒
+# Wedding Table Assignment System 🕌
 
 A beautiful, modern web application that allows wedding guests to scan a QR code and find their assigned table by entering their name.
 
