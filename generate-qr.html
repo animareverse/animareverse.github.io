@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QR Code Generator - Wedding Table Assignment</title>
+    <title>Generatore Codice QR - Assegnazione Tavoli Matrimonio</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
@@ -14,63 +14,66 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1 class="wedding-title">QR Code Generator</h1>
-        <p class="wedding-subtitle">Generate a QR code for your wedding table assignment system</p>
-        <div class="heart-decoration">💕</div>
+        <h1 class="wedding-title">Generatore Codice QR</h1>
+        <p class="wedding-subtitle">
+          Genera un codice QR per il sistema di assegnazione tavoli del matrimonio
+        </p>
+        <div class="heart-decoration">🌳</div>
       </div>
 
       <div class="qr-generator">
         <div class="form-group">
-          <label for="websiteUrl">Website URL</label>
-          <input
-            type="url"
-            id="websiteUrl"
-            placeholder="https://yourwebsite.com/index.html"
-            value=""
-          />
+          <label for="websiteUrl">URL del Sito Web</label>
+          <input type="url" id="websiteUrl" placeholder="https://tuosito.com/index.html" value="" />
           <small class="form-help"
-            >Enter the full URL where you'll host the table assignment system</small
+            >Inserisci l'URL completo dove ospiterai il sistema di assegnazione tavoli</small
           >
         </div>
 
-        <button onclick="generateQR()" class="submit-btn">Generate QR Code</button>
+        <button onclick="generateQR()" class="submit-btn">Genera Codice QR</button>
 
         <div id="qrResult" class="qr-result" style="display: none">
-          <h3>Your QR Code:</h3>
+          <h3>Il Tuo Codice QR:</h3>
           <div id="qrcode"></div>
           <p class="qr-instructions">
-            <strong>Instructions:</strong><br />
-            1. Right-click the QR code and save the image<br />
-            2. Print it on a nice card or poster<br />
-            3. Place it at the entrance of your wedding venue<br />
-            4. Guests can scan it with their phone cameras to find their tables!
+            <strong>Istruzioni:</strong><br />
+            1. Clicca con il tasto destro sul codice QR e salva l'immagine<br />
+            2. Stampalo su un bel cartoncino o poster<br />
+            3. Posizionalo all'ingresso del locale del matrimonio<br />
+            4. Gli ospiti possono scansionarlo con le fotocamere dei loro telefoni per trovare i
+            loro tavoli!
           </p>
-          <button onclick="downloadQR()" class="back-btn">Download QR Code</button>
+          <button onclick="downloadQR()" class="back-btn">Scarica Codice QR</button>
         </div>
       </div>
 
       <div class="setup-instructions">
-        <h3>Setup Instructions:</h3>
+        <h3>Istruzioni di Configurazione:</h3>
         <ol>
           <li>
-            <strong>Edit Guest List:</strong> Open <code>guests.js</code> and replace the example
-            data with your actual guest list
+            <strong>Modifica Lista Ospiti:</strong> Apri <code>guests.js</code> e sostituisci i dati
+            di esempio con la tua lista ospiti reale
           </li>
           <li>
-            <strong>Host the Website:</strong> Upload all files to a web hosting service (GitHub
-            Pages, Netlify, Vercel, etc.)
+            <strong>Ospita il Sito Web:</strong> Carica tutti i file su un servizio di hosting web
+            (GitHub Pages, Netlify, Vercel, ecc.)
           </li>
           <li>
-            <strong>Generate QR Code:</strong> Enter your website URL above and generate the QR code
+            <strong>Genera Codice QR:</strong> Inserisci l'URL del tuo sito web sopra e genera il
+            codice QR
           </li>
           <li>
-            <strong>Print & Display:</strong> Print the QR code and place it at your venue entrance
+            <strong>Stampa e Esponi:</strong> Stampa il codice QR e posizionalo all'ingresso del
+            locale
           </li>
         </ol>
       </div>
 
       <div class="footer">
-        <p>Perfect for a modern wedding celebration! 🎉</p>
+        <p>Perfetto per un matrimonio nella foresta incantata! 🌲✨</p>
+        <div class="wedding-couple">
+          <p>Matrimonio Mariam & Ismail</p>
+        </div>
       </div>
     </div>
 
@@ -88,7 +91,7 @@
       function generateQR() {
         const url = document.getElementById('websiteUrl').value
         if (!url) {
-          alert('Please enter a website URL')
+          alert('Per favore inserisci un URL del sito web')
           return
         }
 
@@ -101,14 +104,14 @@
             width: 300,
             margin: 2,
             color: {
-              dark: '#8b4b8c',
+              dark: '#2e7d32',
               light: '#ffffff'
             }
           },
           function (error, canvas) {
             if (error) {
               console.error(error)
-              alert('Error generating QR code')
+              alert('Errore nella generazione del codice QR')
               return
             }
 
@@ -121,7 +124,7 @@
 
       function downloadQR() {
         if (!qrCanvas) {
-          alert('Please generate a QR code first')
+          alert('Per favore genera prima un codice QR')
           return
         }
 
@@ -152,7 +155,7 @@
 
       .qr-result h3 {
         margin-bottom: 20px;
-        color: #8b4b8c;
+        color: #2e7d32;
       }
 
       .qr-result canvas {
@@ -181,7 +184,7 @@
       }
 
       .setup-instructions h3 {
-        color: #8b4b8c;
+        color: #2e7d32;
         margin-bottom: 20px;
         font-family: 'Dancing Script', cursive;
         font-size: 1.8rem;

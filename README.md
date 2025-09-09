@@ -1,24 +1,24 @@
-# Wedding Table Assignment System 🕌
+# Sistema di Assegnazione Tavoli Matrimonio 🌳
 
-A beautiful, modern web application that allows wedding guests to scan a QR code and find their assigned table by entering their name.
+Una bellissima applicazione web a tema foresta incantata che permette agli ospiti del matrimonio di scansionare un codice QR e trovare il loro tavolo assegnato inserendo il loro nome.
 
-## Features ✨
+## Caratteristiche ✨
 
-- **QR Code Integration**: Guests scan a QR code to access the system
-- **Name Search**: Simple form where guests enter their first name (and last name if needed for duplicates)
-- **Beautiful Design**: Wedding-themed UI with elegant animations and effects
-- **Duplicate Handling**: Smart system to handle guests with the same first name
-- **Mobile Responsive**: Works perfectly on all devices
-- **Celebration Effects**: Animated hearts and smooth transitions for a delightful experience
+- **Integrazione Codice QR**: Gli ospiti scansionano un codice QR per accedere al sistema
+- **Ricerca per Nome**: Semplice modulo dove gli ospiti inseriscono il loro nome (e cognome se necessario per i duplicati)
+- **Design Bellissimo**: UI a tema foresta incantata con eleganti animazioni ed effetti di foglie che cadono
+- **Gestione Duplicati**: Sistema intelligente per gestire ospiti con lo stesso nome
+- **Responsive Mobile**: Funziona perfettamente su tutti i dispositivi
+- **Effetti di Celebrazione**: Foglie che cadono animate e transizioni fluide per un'esperienza magica
 
-## How It Works 🎯
+## Come Funziona 🎯
 
-1. **Guest scans QR code** at the venue entrance
-2. **Opens the search form** where they enter their name
-3. **System finds their table** and displays it beautifully
-4. **Guest heads to their assigned table** and enjoys the celebration!
+1. **L'ospite scansiona il codice QR** all'ingresso del locale
+2. **Si apre il modulo di ricerca** dove inserisce il suo nome
+3. **Il sistema trova il suo tavolo** e lo mostra in modo bellissimo
+4. **L'ospite si dirige al tavolo assegnato** e si gode la celebrazione!
 
-## Setup Instructions 🚀
+## Istruzioni di Configurazione 🚀
 
 ### Step 1: Customize Your Guest List
 
@@ -140,4 +140,5 @@ This system was created with love for your special day! If you need help:
 **Congratulations on your upcoming wedding! 🥂**
 
 May your special day be filled with love, joy, and seamlessly organized seating arrangements! ✨
+
 # wedding-tables

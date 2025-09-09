@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mappa dei Tavoli - Matrimonio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="wedding-title">Mappa dei Tavoli</h1>
+        <p class="wedding-subtitle">Trova il tuo nome e tavolo nella mappa qui sotto</p>
+        <div class="heart-decoration">🌳</div>
+      </div>
+
+      <div class="table-chart-container">
+        <div class="chart-instructions">
+          <p>📍 Cerca il tuo nome nella mappa qui sotto per trovare il tuo tavolo assegnato</p>
+        </div>
+        
+        <div class="chart-image-container">
+          <!-- L'immagine sarà inserita qui -->
+          <img 
+            id="tableChartImage" 
+            src="table-chart.jpg" 
+            alt="Mappa dei tavoli del matrimonio" 
+            class="table-chart-image"
+            onerror="showImagePlaceholder()"
+          />
+          
+          <!-- Placeholder quando l'immagine non è disponibile -->
+          <div id="imagePlaceholder" class="image-placeholder" style="display: none;">
+            <div class="placeholder-content">
+              <h3>🗺️ Mappa dei Tavoli</h3>
+              <p>L'immagine della mappa dei tavoli sarà disponibile qui.</p>
+              <p class="placeholder-note">
+                Per ora, per favore contatta gli sposi per assistenza nella ricerca del tuo tavolo.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chart-help">
+          <p>💡 <strong>Suggerimento:</strong> Puoi ingrandire l'immagine toccandola o usando lo zoom del browser</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button onclick="window.location.href='index.html'" class="back-btn">
+          🔙 Torna alla Ricerca
+        </button>
+      </div>
+
+      <div class="footer">
+        <p>Se hai ancora difficoltà a trovare il tuo tavolo, chiedi assistenza agli sposi! 🌿✨</p>
+        <div class="wedding-couple">
+          <p>Matrimonio Mariam & Ismail</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showImagePlaceholder() {
+        document.getElementById('tableChartImage').style.display = 'none';
+        document.getElementById('imagePlaceholder').style.display = 'block';
+      }
+      
+      // Add click to zoom functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const image = document.getElementById('tableChartImage');
+        if (image) {
+          image.addEventListener('click', function() {
+            if (this.style.transform === 'scale(1.5)') {
+              this.style.transform = 'scale(1)';
+              this.style.cursor = 'zoom-in';
+            } else {
+              this.style.transform = 'scale(1.5)';
+              this.style.cursor = 'zoom-out';
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

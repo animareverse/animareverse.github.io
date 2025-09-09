@@ -47,49 +47,49 @@ function displayGuestInfo(guest) {
 }
 
 function addCelebrationEffects() {
-  // Create floating hearts animation
-  createFloatingHearts()
+  // Create falling leaves animation
+  createFallingLeaves()
 
   // Add subtle pulse to table name
   const tableName = document.getElementById('tableName')
   tableName.style.animation = 'tableReveal 0.8s ease-out'
 }
 
-function createFloatingHearts() {
-  const hearts = ['💕', '💖', '💗', '💝', '💘']
+function createFallingLeaves() {
+  const leaves = ['🍃', '🌿', '🍀', '🌱', '🌾']
   const container = document.querySelector('.container')
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     setTimeout(() => {
-      const heart = document.createElement('div')
-      heart.textContent = hearts[Math.floor(Math.random() * hearts.length)]
-      heart.style.position = 'fixed'
-      heart.style.fontSize = Math.random() * 20 + 15 + 'px'
-      heart.style.left = Math.random() * window.innerWidth + 'px'
-      heart.style.top = window.innerHeight + 'px'
-      heart.style.zIndex = '1000'
-      heart.style.pointerEvents = 'none'
-      heart.style.opacity = '0.7'
+      const leaf = document.createElement('div')
+      leaf.textContent = leaves[Math.floor(Math.random() * leaves.length)]
+      leaf.style.position = 'fixed'
+      leaf.style.fontSize = Math.random() * 15 + 20 + 'px'
+      leaf.style.left = Math.random() * window.innerWidth + 'px'
+      leaf.style.top = '-50px'
+      leaf.style.zIndex = '1000'
+      leaf.style.pointerEvents = 'none'
+      leaf.style.opacity = '0.8'
 
-      // Animate upward
-      heart.style.transition = 'all 4s ease-out'
-      document.body.appendChild(heart)
+      // Animate falling with gentle swaying
+      leaf.style.transition = 'all 5s ease-out'
+      document.body.appendChild(leaf)
 
       setTimeout(() => {
-        heart.style.top = '-100px'
-        heart.style.opacity = '0'
-        heart.style.transform = `rotate(${Math.random() * 360}deg) translateX(${
-          Math.random() * 200 - 100
+        leaf.style.top = window.innerHeight + 100 + 'px'
+        leaf.style.opacity = '0'
+        leaf.style.transform = `rotate(${Math.random() * 180 - 90}deg) translateX(${
+          Math.random() * 150 - 75
         }px)`
       }, 100)
 
       // Remove element after animation
       setTimeout(() => {
-        if (heart.parentNode) {
-          heart.parentNode.removeChild(heart)
+        if (leaf.parentNode) {
+          leaf.parentNode.removeChild(leaf)
         }
-      }, 4500)
-    }, i * 300)
+      }, 5500)
+    }, i * 400)
   }
 }
 
@@ -107,15 +107,15 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  // Add click effect to create more hearts
+  // Add click effect to create more leaves
   const tableName = document.getElementById('tableName')
   if (tableName) {
     tableName.addEventListener('click', function () {
-      createFloatingHearts()
+      createFallingLeaves()
     })
 
     // Add cursor pointer to indicate it's clickable
     tableName.style.cursor = 'pointer'
-    tableName.title = 'Click for more celebration! 🎉'
+    tableName.title = 'Clicca per più foglie magiche! 🌿✨'
   }
 })

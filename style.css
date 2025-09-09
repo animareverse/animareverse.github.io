@@ -7,9 +7,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 50%, #e8f8ff 100%);
+  background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 50%, #f8fff0 100%);
   min-height: 100vh;
-  color: #444;
+  color: #2d4a2d;
   overflow-x: hidden;
 }
 
@@ -21,9 +21,9 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(221, 160, 221, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 70%, rgba(173, 216, 230, 0.1) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 195, 74, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(165, 214, 167, 0.1) 0%, transparent 50%);
   z-index: -1;
 }
 
@@ -49,7 +49,7 @@ body::before {
   font-family: 'Dancing Script', cursive;
   font-size: 3.5rem;
   font-weight: 700;
-  color: #8b4b8c;
+  color: #2e7d32;
   margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -63,18 +63,18 @@ body::before {
 
 .heart-decoration {
   font-size: 2rem;
-  animation: heartbeat 2s ease-in-out infinite;
+  animation: sway 3s ease-in-out infinite;
 }
 
-@keyframes heartbeat {
+@keyframes sway {
   0% {
-    transform: scale(1);
+    transform: rotate(-3deg);
   }
   50% {
-    transform: scale(1.1);
+    transform: rotate(3deg);
   }
   100% {
-    transform: scale(1);
+    transform: rotate(-3deg);
   }
 }
 
@@ -112,9 +112,9 @@ body::before {
 
 .form-group input:focus {
   outline: none;
-  border-color: #8b4b8c;
+  border-color: #2e7d32;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(139, 75, 140, 0.2);
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
 }
 
 .form-help {
@@ -128,7 +128,7 @@ body::before {
 .submit-btn {
   width: 100%;
   padding: 18px;
-  background: linear-gradient(135deg, #8b4b8c 0%, #b46cb4 100%);
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -142,7 +142,7 @@ body::before {
 
 .submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(139, 75, 140, 0.3);
+  box-shadow: 0 15px 35px rgba(46, 125, 50, 0.3);
 }
 
 .submit-btn:active {
@@ -172,7 +172,7 @@ body::before {
 .guest-name {
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
-  color: #8b4b8c;
+  color: #2e7d32;
   margin-bottom: 15px;
 }
 
@@ -204,7 +204,7 @@ body::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #8b4b8c, #b46cb4, #8b4b8c);
+  background: linear-gradient(90deg, #2e7d32, #4caf50, #2e7d32);
 }
 
 .table-card h3 {
@@ -218,7 +218,7 @@ body::before {
   font-family: 'Dancing Script', cursive;
   font-size: 4rem;
   font-weight: 700;
-  color: #8b4b8c;
+  color: #2e7d32;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   animation: tableReveal 0.8s ease-out;
@@ -257,8 +257,8 @@ body::before {
 .back-btn {
   padding: 12px 30px;
   background: transparent;
-  color: #8b4b8c;
-  border: 2px solid #8b4b8c;
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
   border-radius: 25px;
   font-size: 1rem;
   font-weight: 500;
@@ -267,7 +267,7 @@ body::before {
 }
 
 .back-btn:hover {
-  background: #8b4b8c;
+  background: #2e7d32;
   color: white;
   transform: translateY(-2px);
 }
@@ -283,6 +283,52 @@ body::before {
   color: #888;
   font-size: 0.95rem;
   font-weight: 300;
+}
+
+/* Wedding couple signature */
+.wedding-couple {
+  margin-top: 30px;
+  padding: 25px 20px 15px;
+  border-top: 2px solid rgba(46, 125, 50, 0.3);
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(76, 175, 80, 0.05) 100%);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wedding-couple::before {
+  content: '🌿';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.wedding-couple p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 2px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 0 0 10px rgba(46, 125, 50, 0.3);
+  }
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 0 0 20px rgba(46, 125, 50, 0.5);
+  }
 }
 
 /* Responsive design */
@@ -306,21 +352,166 @@ body::before {
   .guest-name {
     font-size: 2rem;
   }
+
+  .wedding-couple p {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .wedding-couple {
+    padding: 20px 15px 10px;
+    margin-top: 25px;
+  }
+}
+
+/* Backup option styling */
+.backup-option {
+   text-align: center;
+   margin: 30px 0;
+   padding: 20px;
+   background: rgba(255, 255, 255, 0.7);
+   border-radius: 15px;
+   border: 1px solid rgba(46, 125, 50, 0.2);
+}
+
+.backup-text {
+   font-size: 1rem;
+   color: #555;
+   margin-bottom: 15px;
+   font-weight: 400;
+}
+
+.backup-btn {
+   padding: 12px 25px;
+   background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+   color: white;
+   border: none;
+   border-radius: 25px;
+   font-size: 0.95rem;
+   font-weight: 500;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   text-decoration: none;
+   display: inline-block;
+}
+
+.backup-btn:hover {
+   background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);
+   transform: translateY(-2px);
+   box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+/* Table chart page styles */
+.table-chart-container {
+   background: rgba(255, 255, 255, 0.9);
+   padding: 30px;
+   border-radius: 20px;
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(10px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   margin-bottom: 30px;
+}
+
+.chart-instructions {
+   text-align: center;
+   margin-bottom: 25px;
+   padding: 15px;
+   background: rgba(46, 125, 50, 0.1);
+   border-radius: 10px;
+   border-left: 4px solid #2e7d32;
+}
+
+.chart-instructions p {
+   margin: 0;
+   font-size: 1.1rem;
+   color: #2e7d32;
+   font-weight: 500;
+}
+
+.chart-image-container {
+   text-align: center;
+   margin: 20px 0;
+   position: relative;
+   overflow: hidden;
+   border-radius: 15px;
+   background: #f8f9fa;
+   min-height: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.table-chart-image {
+   max-width: 100%;
+   height: auto;
+   border-radius: 10px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+   cursor: zoom-in;
+   transition: transform 0.3s ease;
+}
+
+.image-placeholder {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 400px;
+   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+   border-radius: 15px;
+   border: 2px dashed #dee2e6;
+}
+
+.placeholder-content {
+   text-align: center;
+   padding: 40px 20px;
+}
+
+.placeholder-content h3 {
+   font-size: 2rem;
+   color: #6c757d;
+   margin-bottom: 15px;
+   font-family: 'Dancing Script', cursive;
+}
+
+.placeholder-content p {
+   color: #6c757d;
+   font-size: 1rem;
+   margin-bottom: 10px;
+}
+
+.placeholder-note {
+   font-style: italic;
+   font-size: 0.9rem !important;
+   color: #495057 !important;
+   margin-top: 20px !important;
+}
+
+.chart-help {
+   text-align: center;
+   margin-top: 20px;
+   padding: 10px;
+   background: rgba(76, 175, 80, 0.1);
+   border-radius: 8px;
+}
+
+.chart-help p {
+   margin: 0;
+   font-size: 0.9rem;
+   color: #2e7d32;
 }
 
 /* Loading animation */
 .loading {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   border: 3px solid rgba(255, 255, 255, 0.3);
+   border-radius: 50%;
+   border-top-color: #fff;
+   animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+   to {
+     transform: rotate(360deg);
+   }
 }

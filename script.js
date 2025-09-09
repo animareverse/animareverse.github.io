@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show loading state
     const submitBtn = form.querySelector('.submit-btn')
     const originalText = submitBtn.textContent
-    submitBtn.innerHTML = '<span class="loading"></span> Searching...'
+    submitBtn.innerHTML = '<span class="loading"></span> Ricerca in corso...'
     submitBtn.disabled = true
 
     // Simulate a small delay for better UX
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!result) {
         showError(
-          `Sorry, we couldn't find "${firstName}" in our guest list. Please check the spelling and try again, or contact the hosts for assistance.`
+          `Spiacenti, non riusciamo a trovare "${firstName}" nella nostra lista degli ospiti. Per favore controlla l'ortografia e riprova, o contatta gli sposi per assistenza.`
         )
         return
       }
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function handleMultipleMatches(result) {
   const { matches, firstName, lastNameProvided } = result
 
-  let errorMsg = `We found ${matches.length} guests named "${firstName}":`
+  let errorMsg = `Abbiamo trovato ${matches.length} ospiti di nome "${firstName}":`
   errorMsg += '<br><br>'
 
   matches.forEach((guest, index) => {
@@ -57,9 +57,10 @@ function handleMultipleMatches(result) {
   })
 
   if (!lastNameProvided) {
-    errorMsg += '<br>Please enter your last name to help us identify you correctly.'
+    errorMsg +=
+      '<br>Per favore inserisci il tuo cognome per aiutarci a identificarti correttamente.'
   } else {
-    errorMsg += `<br>We couldn't find an exact match for "${firstName} ${lastNameProvided}". Please check the spelling or try with just your first name.`
+    errorMsg += `<br>Non riusciamo a trovare una corrispondenza esatta per "${firstName} ${lastNameProvided}". Per favore controlla l'ortografia o prova solo con il nome.`
   }
 
   showError(errorMsg)
