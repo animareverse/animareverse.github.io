@@ -22,19 +22,19 @@
         <div class="chart-instructions">
           <p>📍 Cerca il tuo nome nella mappa qui sotto per trovare il tuo tavolo assegnato</p>
         </div>
-        
+
         <div class="chart-image-container">
           <!-- L'immagine sarà inserita qui -->
-          <img 
-            id="tableChartImage" 
-            src="table-chart.jpg" 
-            alt="Mappa dei tavoli del matrimonio" 
+          <img
+            id="tableChartImage"
+            src="table-chart.jpg"
+            alt="Mappa dei tavoli del matrimonio"
             class="table-chart-image"
             onerror="showImagePlaceholder()"
           />
-          
+
           <!-- Placeholder quando l'immagine non è disponibile -->
-          <div id="imagePlaceholder" class="image-placeholder" style="display: none;">
+          <div id="imagePlaceholder" class="image-placeholder" style="display: none">
             <div class="placeholder-content">
               <h3>🗺️ Mappa dei Tavoli</h3>
               <p>L'immagine della mappa dei tavoli sarà disponibile qui.</p>
@@ -44,9 +44,12 @@
             </div>
           </div>
         </div>
-        
+
         <div class="chart-help">
-          <p>💡 <strong>Suggerimento:</strong> Puoi ingrandire l'immagine toccandola o usando lo zoom del browser</p>
+          <p>
+            💡 <strong>Suggerimento:</strong> Puoi ingrandire l'immagine toccandola o usando lo zoom
+            del browser
+          </p>
         </div>
       </div>
 
@@ -58,33 +61,30 @@
 
       <div class="footer">
         <p>Se hai ancora difficoltà a trovare il tuo tavolo, chiedi assistenza agli sposi! 🌿✨</p>
-        <div class="wedding-couple">
-          <p>Matrimonio Mariam & Ismail</p>
-        </div>
       </div>
     </div>
 
     <script>
       function showImagePlaceholder() {
-        document.getElementById('tableChartImage').style.display = 'none';
-        document.getElementById('imagePlaceholder').style.display = 'block';
+        document.getElementById('tableChartImage').style.display = 'none'
+        document.getElementById('imagePlaceholder').style.display = 'block'
       }
-      
+
       // Add click to zoom functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const image = document.getElementById('tableChartImage');
+      document.addEventListener('DOMContentLoaded', function () {
+        const image = document.getElementById('tableChartImage')
         if (image) {
-          image.addEventListener('click', function() {
+          image.addEventListener('click', function () {
             if (this.style.transform === 'scale(1.5)') {
-              this.style.transform = 'scale(1)';
-              this.style.cursor = 'zoom-in';
+              this.style.transform = 'scale(1)'
+              this.style.cursor = 'zoom-in'
             } else {
-              this.style.transform = 'scale(1.5)';
-              this.style.cursor = 'zoom-out';
+              this.style.transform = 'scale(1.5)'
+              this.style.cursor = 'zoom-out'
             }
-          });
+          })
         }
-      });
+      })
     </script>
   </body>
 </html>

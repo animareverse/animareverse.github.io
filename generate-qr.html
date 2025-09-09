@@ -9,7 +9,6 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -30,7 +29,7 @@
           >
         </div>
 
-        <button onclick="generateQR()" class="submit-btn">Genera Codice QR</button>
+        <button id="generateBtn" onclick="generateQR()" class="submit-btn">Genera Codice QR</button>
 
         <div id="qrResult" class="qr-result" style="display: none">
           <h3>Il Tuo Codice QR:</h3>
@@ -71,9 +70,6 @@
 
       <div class="footer">
         <p>Perfetto per un matrimonio nella foresta incantata! 🌲✨</p>
-        <div class="wedding-couple">
-          <p>Matrimonio Mariam & Ismail</p>
-        </div>
       </div>
     </div>
 
@@ -95,31 +91,53 @@
           return
         }
 
+        // Show loading state
+        const generateBtn = document.getElementById('generateBtn')
+        const originalText = generateBtn.textContent
+        generateBtn.innerHTML = '<span class="loading"></span> Generazione...'
+        generateBtn.disabled = true
+
         const qrContainer = document.getElementById('qrcode')
         qrContainer.innerHTML = ''
 
-        QRCode.toCanvas(
-          url,
-          {
-            width: 300,
-            margin: 2,
-            color: {
-              dark: '#2e7d32',
-              light: '#ffffff'
-            }
-          },
-          function (error, canvas) {
-            if (error) {
-              console.error(error)
-              alert('Errore nella generazione del codice QR')
-              return
-            }
+        try {
+          // Use QR Server API - reliable and simple
+          const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(
+            url
+          )}&color=2e7d32&bgcolor=ffffff&margin=10`
 
-            qrCanvas = canvas
-            qrContainer.appendChild(canvas)
+          const img = document.createElement('img')
+          img.src = qrUrl
+          img.alt = 'Codice QR per il matrimonio'
+          img.className = 'qr-code-image'
+          img.style.borderRadius = '10px'
+          img.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)'
+          img.style.maxWidth = '100%'
+          img.style.height = 'auto'
+
+          img.onload = function () {
+            // Reset button
+            generateBtn.textContent = originalText
+            generateBtn.disabled = false
+
+            qrContainer.appendChild(img)
+            qrCanvas = img // Store for download
             document.getElementById('qrResult').style.display = 'block'
           }
-        )
+
+          img.onerror = function () {
+            // Reset button
+            generateBtn.textContent = originalText
+            generateBtn.disabled = false
+            alert('Errore nella generazione del codice QR. Verifica la connessione internet.')
+          }
+        } catch (error) {
+          // Reset button
+          generateBtn.textContent = originalText
+          generateBtn.disabled = false
+          console.error('Error generating QR code:', error)
+          alert('Errore nella generazione del codice QR. Riprova.')
+        }
       }
 
       function downloadQR() {
@@ -128,10 +146,14 @@
           return
         }
 
+        // For image-based QR codes, we'll download the image directly
         const link = document.createElement('a')
-        link.download = 'wedding-table-qr-code.png'
-        link.href = qrCanvas.toDataURL()
+        link.download = 'matrimonio-mariam-ismail-qr-code.png'
+        link.href = qrCanvas.src
+        link.target = '_blank'
+        document.body.appendChild(link)
         link.click()
+        document.body.removeChild(link)
       }
     </script>
 

@@ -27,6 +27,60 @@ body::before {
   z-index: -1;
 }
 
+/* Wedding Header at the top */
+.wedding-header {
+  text-align: center;
+  padding: 15px 0 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(46, 125, 50, 0.2);
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(76, 175, 80, 0.05) 100%);
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wedding-header::before {
+  content: '🌿';
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.wedding-header::after {
+  content: '🌿';
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.wedding-header p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: headerGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 15px rgba(46, 125, 50, 0.3);
+  }
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 25px rgba(46, 125, 50, 0.5);
+  }
+}
+
 /* Container */
 .container {
   max-width: 500px;
@@ -285,52 +339,6 @@ body::before {
   font-weight: 300;
 }
 
-/* Wedding couple signature */
-.wedding-couple {
-  margin-top: 30px;
-  padding: 25px 20px 15px;
-  border-top: 2px solid rgba(46, 125, 50, 0.3);
-  background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(76, 175, 80, 0.05) 100%);
-  border-radius: 15px;
-  position: relative;
-  overflow: hidden;
-}
-
-.wedding-couple::before {
-  content: '🌿';
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  opacity: 0.7;
-}
-
-.wedding-couple p {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #2e7d32;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-  letter-spacing: 2px;
-  line-height: 1.2;
-  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  0% {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 0 0 10px rgba(46, 125, 50, 0.3);
-  }
-  100% {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 0 0 20px rgba(46, 125, 50, 0.5);
-  }
-}
-
 /* Responsive design */
 @media (max-width: 600px) {
   .container {
@@ -353,165 +361,165 @@ body::before {
     font-size: 2rem;
   }
 
-  .wedding-couple p {
-    font-size: 1.8rem;
+  .wedding-header p {
+    font-size: 2rem;
     letter-spacing: 1px;
   }
 
-  .wedding-couple {
-    padding: 20px 15px 10px;
-    margin-top: 25px;
+  .wedding-header {
+    padding: 12px 0 15px;
+    margin-bottom: 15px;
   }
 }
 
 /* Backup option styling */
 .backup-option {
-   text-align: center;
-   margin: 30px 0;
-   padding: 20px;
-   background: rgba(255, 255, 255, 0.7);
-   border-radius: 15px;
-   border: 1px solid rgba(46, 125, 50, 0.2);
+  text-align: center;
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  border: 1px solid rgba(46, 125, 50, 0.2);
 }
 
 .backup-text {
-   font-size: 1rem;
-   color: #555;
-   margin-bottom: 15px;
-   font-weight: 400;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: 400;
 }
 
 .backup-btn {
-   padding: 12px 25px;
-   background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
-   color: white;
-   border: none;
-   border-radius: 25px;
-   font-size: 0.95rem;
-   font-weight: 500;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   text-decoration: none;
-   display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .backup-btn:hover {
-   background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);
-   transform: translateY(-2px);
-   box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+  background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
 }
 
 /* Table chart page styles */
 .table-chart-container {
-   background: rgba(255, 255, 255, 0.9);
-   padding: 30px;
-   border-radius: 20px;
-   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-   backdrop-filter: blur(10px);
-   border: 1px solid rgba(255, 255, 255, 0.2);
-   margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 30px;
 }
 
 .chart-instructions {
-   text-align: center;
-   margin-bottom: 25px;
-   padding: 15px;
-   background: rgba(46, 125, 50, 0.1);
-   border-radius: 10px;
-   border-left: 4px solid #2e7d32;
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(46, 125, 50, 0.1);
+  border-radius: 10px;
+  border-left: 4px solid #2e7d32;
 }
 
 .chart-instructions p {
-   margin: 0;
-   font-size: 1.1rem;
-   color: #2e7d32;
-   font-weight: 500;
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2e7d32;
+  font-weight: 500;
 }
 
 .chart-image-container {
-   text-align: center;
-   margin: 20px 0;
-   position: relative;
-   overflow: hidden;
-   border-radius: 15px;
-   background: #f8f9fa;
-   min-height: 400px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #f8f9fa;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .table-chart-image {
-   max-width: 100%;
-   height: auto;
-   border-radius: 10px;
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-   cursor: zoom-in;
-   transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
 }
 
 .image-placeholder {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   min-height: 400px;
-   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-   border-radius: 15px;
-   border: 2px dashed #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  border: 2px dashed #dee2e6;
 }
 
 .placeholder-content {
-   text-align: center;
-   padding: 40px 20px;
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .placeholder-content h3 {
-   font-size: 2rem;
-   color: #6c757d;
-   margin-bottom: 15px;
-   font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #6c757d;
+  margin-bottom: 15px;
+  font-family: 'Dancing Script', cursive;
 }
 
 .placeholder-content p {
-   color: #6c757d;
-   font-size: 1rem;
-   margin-bottom: 10px;
+  color: #6c757d;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .placeholder-note {
-   font-style: italic;
-   font-size: 0.9rem !important;
-   color: #495057 !important;
-   margin-top: 20px !important;
+  font-style: italic;
+  font-size: 0.9rem !important;
+  color: #495057 !important;
+  margin-top: 20px !important;
 }
 
 .chart-help {
-   text-align: center;
-   margin-top: 20px;
-   padding: 10px;
-   background: rgba(76, 175, 80, 0.1);
-   border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
 }
 
 .chart-help p {
-   margin: 0;
-   font-size: 0.9rem;
-   color: #2e7d32;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #2e7d32;
 }
 
 /* Loading animation */
 .loading {
-   display: inline-block;
-   width: 20px;
-   height: 20px;
-   border: 3px solid rgba(255, 255, 255, 0.3);
-   border-radius: 50%;
-   border-top-color: #fff;
-   animation: spin 1s ease-in-out infinite;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-   to {
-     transform: rotate(360deg);
-   }
+  to {
+    transform: rotate(360deg);
+  }
 }
