@@ -4,7 +4,7 @@
 const guestList = [
   // Example guests - replace with your actual guest list
   { firstName: 'Patrizia', lastName: '', table: 'Ulivo' },
-  { firstName: 'Abdellah', lastName: '', table: 'Quercia' },
+  { firstName: 'Abdellah', lastName: 'Bouchraa', table: 'Quercia' },
   { firstName: 'Amina', lastName: '', table: 'Ulivo' },
   { firstName: 'Ibrahim', lastName: '', table: 'Quercia' },
   { firstName: 'Abdelhakim', lastName: '', table: 'Mandorlo' },
