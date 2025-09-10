@@ -53,7 +53,7 @@ function handleMultipleMatches(result) {
 
   matches.forEach((guest, index) => {
     const displayName = guest.lastName ? `${guest.firstName} ${guest.lastName}` : guest.firstName
-    errorMsg += `• ${displayName} (${guest.table})<br>`
+    errorMsg += `• ${displayName}<br>`
   })
 
   if (!lastNameProvided) {
